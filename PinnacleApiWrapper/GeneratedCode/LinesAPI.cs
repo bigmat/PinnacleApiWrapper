@@ -46,7 +46,7 @@ namespace PinnacleApiWrapper
             if (eventIds != null) foreach (var item_ in eventIds) { urlBuilder_.Append("eventIds=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append("&"); }
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -205,7 +205,7 @@ namespace PinnacleApiWrapper
             if (specialId != null) urlBuilder_.Append("specialId=").Append(System.Uri.EscapeDataString(ConvertToString(specialId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -349,7 +349,7 @@ namespace PinnacleApiWrapper
             if (since != null) urlBuilder_.Append("since=").Append(System.Uri.EscapeDataString(ConvertToString(since, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -499,7 +499,7 @@ namespace PinnacleApiWrapper
             if (since != null) urlBuilder_.Append("since=").Append(System.Uri.EscapeDataString(ConvertToString(since, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -658,7 +658,7 @@ namespace PinnacleApiWrapper
             if (eventIds != null) foreach (var item_ in eventIds) { urlBuilder_.Append("eventIds=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append("&"); }
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -772,7 +772,7 @@ namespace PinnacleApiWrapper
             if (eventIds != null) foreach (var item_ in eventIds) { urlBuilder_.Append("eventIds=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append("&"); }
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -916,7 +916,7 @@ namespace PinnacleApiWrapper
             urlBuilder_.Append("teaserId=").Append(System.Uri.EscapeDataString(ConvertToString(teaserId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1072,7 +1072,7 @@ namespace PinnacleApiWrapper
             if (specialId != null) urlBuilder_.Append("specialId=").Append(System.Uri.EscapeDataString(ConvertToString(specialId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1258,7 +1258,7 @@ namespace PinnacleApiWrapper
             if (side != null) urlBuilder_.Append("side=").Append(System.Uri.EscapeDataString(ConvertToString(side, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1395,7 +1395,7 @@ namespace PinnacleApiWrapper
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/v1/line/parlay");
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1535,7 +1535,7 @@ namespace PinnacleApiWrapper
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/v1/line/teaser");
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1694,7 +1694,7 @@ namespace PinnacleApiWrapper
             urlBuilder_.Append("contestantId=").Append(System.Uri.EscapeDataString(ConvertToString(contestantId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1836,7 +1836,7 @@ namespace PinnacleApiWrapper
             urlBuilder_.Append("sportId=").Append(System.Uri.EscapeDataString(ConvertToString(sportId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1973,7 +1973,7 @@ namespace PinnacleApiWrapper
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/v1/inrunning");
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -2102,7 +2102,7 @@ namespace PinnacleApiWrapper
             urlBuilder_.Append("oddsFormat=").Append(System.Uri.EscapeDataString(ConvertToString(oddsFormat, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -2239,7 +2239,7 @@ namespace PinnacleApiWrapper
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/v1/cancellationreasons");
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -2364,7 +2364,7 @@ namespace PinnacleApiWrapper
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/v2/sports");
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -2493,7 +2493,7 @@ namespace PinnacleApiWrapper
             urlBuilder_.Append("sportId=").Append(System.Uri.EscapeDataString(ConvertToString(sportId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -2630,7 +2630,7 @@ namespace PinnacleApiWrapper
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/v2/currencies");
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())

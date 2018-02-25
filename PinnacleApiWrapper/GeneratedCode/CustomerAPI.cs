@@ -28,7 +28,7 @@ namespace PinnacleApiWrapper
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/v1/client/balance");
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -178,7 +178,7 @@ namespace PinnacleApiWrapper
             urlBuilder_.Append("baseTexts=").Append(System.Uri.EscapeDataString(ConvertToString(baseTexts, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             urlBuilder_.Length--;
     
-            var client_ = new System.Net.Http.HttpClient();
+            var client_ = _httpClient;
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
