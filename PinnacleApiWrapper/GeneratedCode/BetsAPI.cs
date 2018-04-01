@@ -1691,18 +1691,18 @@ namespace PinnacleApiWrapper
         private System.DateTime _placedAt;
         private StraightBetBetStatus _betStatus;
         private StraightBetBetType _betType;
-        private double _win;
-        private double _risk;
-        private double? _winLoss;
+        private decimal _win;
+        private decimal _risk;
+        private decimal? _winLoss;
         private OddsFormat _oddsFormat;
-        private double? _customerCommission;
+        private decimal? _customerCommission;
         private CancellationReason _cancellationReason;
         private long _updateSequence;
         private int? _sportId;
         private int? _leagueId;
         private long? _eventId;
-        private double? _handicap;
-        private double? _price;
+        private decimal? _handicap;
+        private decimal? _price;
         private string _teamName;
         private StraightBetSide? _side;
         private string _pitcher1;
@@ -1712,12 +1712,12 @@ namespace PinnacleApiWrapper
         private string _team1;
         private string _team2;
         private int? _periodNumber;
-        private double? _team1Score;
-        private double? _team2Score;
-        private double? _ftTeam1Score;
-        private double? _ftTeam2Score;
-        private double? _pTeam1Score;
-        private double? _pTeam2Score;
+        private decimal? _team1Score;
+        private decimal? _team2Score;
+        private decimal? _ftTeam1Score;
+        private decimal? _ftTeam2Score;
+        private decimal? _pTeam1Score;
+        private decimal? _pTeam2Score;
         private StraightBetIsLive? _isLive;
     
         /// <summary>Bet identification</summary>
@@ -1811,7 +1811,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Win amount.</summary>
         [Newtonsoft.Json.JsonProperty("win", Required = Newtonsoft.Json.Required.Always)]
-        public double Win
+        public decimal Win
         {
             get { return _win; }
             set 
@@ -1826,7 +1826,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Risk amount.</summary>
         [Newtonsoft.Json.JsonProperty("risk", Required = Newtonsoft.Json.Required.Always)]
-        public double Risk
+        public decimal Risk
         {
             get { return _risk; }
             set 
@@ -1841,7 +1841,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Win-Loss for settled bets.</summary>
         [Newtonsoft.Json.JsonProperty("winLoss", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? WinLoss
+        public decimal? WinLoss
         {
             get { return _winLoss; }
             set 
@@ -1872,7 +1872,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Client’s commission on the bet.</summary>
         [Newtonsoft.Json.JsonProperty("customerCommission", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? CustomerCommission
+        public decimal? CustomerCommission
         {
             get { return _customerCommission; }
             set 
@@ -1957,7 +1957,7 @@ namespace PinnacleApiWrapper
         }
     
         [Newtonsoft.Json.JsonProperty("handicap", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? Handicap
+        public decimal? Handicap
         {
             get { return _handicap; }
             set 
@@ -1971,7 +1971,7 @@ namespace PinnacleApiWrapper
         }
     
         [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? Price
+        public decimal? Price
         {
             get { return _price; }
             set 
@@ -2120,7 +2120,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Team 1 score that the bet was placed on, only for live bets.</summary>
         [Newtonsoft.Json.JsonProperty("team1Score", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? Team1Score
+        public decimal? Team1Score
         {
             get { return _team1Score; }
             set 
@@ -2135,7 +2135,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Team 2 score that the bet was placed, only for live bets.</summary>
         [Newtonsoft.Json.JsonProperty("team2Score", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? Team2Score
+        public decimal? Team2Score
         {
             get { return _team2Score; }
             set 
@@ -2150,7 +2150,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Full time team 1 score, only for settled bets.</summary>
         [Newtonsoft.Json.JsonProperty("ftTeam1Score", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? FtTeam1Score
+        public decimal? FtTeam1Score
         {
             get { return _ftTeam1Score; }
             set 
@@ -2165,7 +2165,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Full time team 2 score, only for settled bets.</summary>
         [Newtonsoft.Json.JsonProperty("ftTeam2Score", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? FtTeam2Score
+        public decimal? FtTeam2Score
         {
             get { return _ftTeam2Score; }
             set 
@@ -2180,7 +2180,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>.End of period team 1 score, only for settled bets. If the bet was placed on Game period (periodNumber =0) , this will be null . </summary>
         [Newtonsoft.Json.JsonProperty("pTeam1Score", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? PTeam1Score
+        public decimal? PTeam1Score
         {
             get { return _pTeam1Score; }
             set 
@@ -2195,7 +2195,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>End of period team 2 score, only for settled bets. If the bet was placed on Game period (periodNumber =0) , this will be null</summary>
         [Newtonsoft.Json.JsonProperty("pTeam2Score", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? PTeam2Score
+        public decimal? PTeam2Score
         {
             get { return _pTeam2Score; }
             set 
@@ -3325,16 +3325,16 @@ namespace PinnacleApiWrapper
         private System.DateTime _placedAt;
         private ParlayBetBetStatus _betStatus;
         private string _betType = "PARLAY";
-        private double _win;
-        private double _risk;
-        private double? _winLoss;
+        private decimal _win;
+        private decimal _risk;
+        private decimal? _winLoss;
         private OddsFormat _oddsFormat;
-        private double? _customerCommission;
+        private decimal? _customerCommission;
         private CancellationReason _cancellationReason;
         private long _updateSequence;
         private System.Collections.ObjectModel.ObservableCollection<ParlayLeg> _legs = new System.Collections.ObjectModel.ObservableCollection<ParlayLeg>();
-        private double? _price;
-        private double? _finalPrice;
+        private decimal? _price;
+        private decimal? _finalPrice;
     
         /// <summary>Bet identification</summary>
         [Newtonsoft.Json.JsonProperty("betId", Required = Newtonsoft.Json.Required.Always)]
@@ -3440,7 +3440,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Win amount.</summary>
         [Newtonsoft.Json.JsonProperty("win", Required = Newtonsoft.Json.Required.Always)]
-        public double Win
+        public decimal Win
         {
             get { return _win; }
             set 
@@ -3455,7 +3455,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Risk amount.</summary>
         [Newtonsoft.Json.JsonProperty("risk", Required = Newtonsoft.Json.Required.Always)]
-        public double Risk
+        public decimal Risk
         {
             get { return _risk; }
             set 
@@ -3470,7 +3470,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Win-Loss for settled bets.</summary>
         [Newtonsoft.Json.JsonProperty("winLoss", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? WinLoss
+        public decimal? WinLoss
         {
             get { return _winLoss; }
             set 
@@ -3501,7 +3501,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Client’s commission on the bet.</summary>
         [Newtonsoft.Json.JsonProperty("customerCommission", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? CustomerCommission
+        public decimal? CustomerCommission
         {
             get { return _customerCommission; }
             set 
@@ -3559,7 +3559,7 @@ namespace PinnacleApiWrapper
         }
     
         [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? Price
+        public decimal? Price
         {
             get { return _price; }
             set 
@@ -3574,7 +3574,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Only for settled parlay. Final price may differ in case leg was cancelled or half won</summary>
         [Newtonsoft.Json.JsonProperty("finalPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? FinalPrice
+        public decimal? FinalPrice
         {
             get { return _finalPrice; }
             set 
@@ -3616,8 +3616,8 @@ namespace PinnacleApiWrapper
         private int? _leagueId;
         private long? _eventId;
         private System.DateTime? _eventStartTime;
-        private double? _handicap;
-        private double? _price;
+        private decimal? _handicap;
+        private decimal? _price;
         private string _teamName;
         private ParlayLegSide? _side;
         private string _pitcher1;
@@ -3627,10 +3627,10 @@ namespace PinnacleApiWrapper
         private string _team1;
         private string _team2;
         private int? _periodNumber;
-        private double? _ftTeam1Score;
-        private double? _ftTeam2Score;
-        private double? _pTeam1Score;
-        private double? _pTeam2Score;
+        private decimal? _ftTeam1Score;
+        private decimal? _ftTeam2Score;
+        private decimal? _pTeam1Score;
+        private decimal? _pTeam2Score;
         private CancellationReason _cancellationReason;
     
         [Newtonsoft.Json.JsonProperty("sportId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
@@ -3728,7 +3728,7 @@ namespace PinnacleApiWrapper
         }
     
         [Newtonsoft.Json.JsonProperty("handicap", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? Handicap
+        public decimal? Handicap
         {
             get { return _handicap; }
             set 
@@ -3742,7 +3742,7 @@ namespace PinnacleApiWrapper
         }
     
         [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? Price
+        public decimal? Price
         {
             get { return _price; }
             set 
@@ -3887,7 +3887,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Full time team 1 score</summary>
         [Newtonsoft.Json.JsonProperty("ftTeam1Score", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? FtTeam1Score
+        public decimal? FtTeam1Score
         {
             get { return _ftTeam1Score; }
             set 
@@ -3902,7 +3902,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Full time team 2 score</summary>
         [Newtonsoft.Json.JsonProperty("ftTeam2Score", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? FtTeam2Score
+        public decimal? FtTeam2Score
         {
             get { return _ftTeam2Score; }
             set 
@@ -3917,7 +3917,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>End of period team 1 score. If the bet was placed on Game period (periodNumber =0) , this will be null</summary>
         [Newtonsoft.Json.JsonProperty("pTeam1Score", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? PTeam1Score
+        public decimal? PTeam1Score
         {
             get { return _pTeam1Score; }
             set 
@@ -3932,7 +3932,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>End of period team 2 score. If the bet was placed on Game period (periodNumber =0) , this will be null</summary>
         [Newtonsoft.Json.JsonProperty("pTeam2Score", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? PTeam2Score
+        public decimal? PTeam2Score
         {
             get { return _pTeam2Score; }
             set 
@@ -4924,19 +4924,19 @@ namespace PinnacleApiWrapper
         private System.DateTime _placedAt;
         private SpecialBetBetStatus _betStatus;
         private string _betType = "SPECIAL";
-        private double _win;
-        private double _risk;
-        private double? _winLoss;
+        private decimal _win;
+        private decimal _risk;
+        private decimal? _winLoss;
         private OddsFormat _oddsFormat;
-        private double? _customerCommission;
+        private decimal? _customerCommission;
         private CancellationReason _cancellationReason;
         private long _updateSequence;
         private long _specialId;
         private string _specialName;
         private long _contestantId;
         private string _contestantName;
-        private double _price;
-        private double? _handicap;
+        private decimal _price;
+        private decimal? _handicap;
         private string _units;
         private int _sportId;
         private int _leagueId;
@@ -5046,7 +5046,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Win amount.</summary>
         [Newtonsoft.Json.JsonProperty("win", Required = Newtonsoft.Json.Required.Always)]
-        public double Win
+        public decimal Win
         {
             get { return _win; }
             set 
@@ -5061,7 +5061,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Risk amount.</summary>
         [Newtonsoft.Json.JsonProperty("risk", Required = Newtonsoft.Json.Required.Always)]
-        public double Risk
+        public decimal Risk
         {
             get { return _risk; }
             set 
@@ -5076,7 +5076,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Win-Loss for settled bets.</summary>
         [Newtonsoft.Json.JsonProperty("winLoss", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? WinLoss
+        public decimal? WinLoss
         {
             get { return _winLoss; }
             set 
@@ -5107,7 +5107,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Client’s commission on the bet.</summary>
         [Newtonsoft.Json.JsonProperty("customerCommission", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? CustomerCommission
+        public decimal? CustomerCommission
         {
             get { return _customerCommission; }
             set 
@@ -5208,7 +5208,7 @@ namespace PinnacleApiWrapper
         }
     
         [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Always)]
-        public double Price
+        public decimal Price
         {
             get { return _price; }
             set 
@@ -5222,7 +5222,7 @@ namespace PinnacleApiWrapper
         }
     
         [Newtonsoft.Json.JsonProperty("handicap", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? Handicap
+        public decimal? Handicap
         {
             get { return _handicap; }
             set 
@@ -5470,17 +5470,17 @@ namespace PinnacleApiWrapper
         private System.DateTime _placedAt;
         private TeaserBetBetStatus _betStatus;
         private string _betType = "TEASER";
-        private double _win;
-        private double _risk;
-        private double? _winLoss;
+        private decimal _win;
+        private decimal _risk;
+        private decimal? _winLoss;
         private OddsFormat _oddsFormat;
-        private double? _customerCommission;
+        private decimal? _customerCommission;
         private CancellationReason _cancellationReason;
         private long _updateSequence;
         private string _teaserName;
         private bool _isSameEventOnly;
-        private double _minPicks;
-        private double _maxPicks;
+        private decimal _minPicks;
+        private decimal _maxPicks;
         private System.Collections.ObjectModel.ObservableCollection<TeaserLeg> _legs = new System.Collections.ObjectModel.ObservableCollection<TeaserLeg>();
     
         /// <summary>Bet identification</summary>
@@ -5585,7 +5585,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Win amount.</summary>
         [Newtonsoft.Json.JsonProperty("win", Required = Newtonsoft.Json.Required.Always)]
-        public double Win
+        public decimal Win
         {
             get { return _win; }
             set 
@@ -5600,7 +5600,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Risk amount.</summary>
         [Newtonsoft.Json.JsonProperty("risk", Required = Newtonsoft.Json.Required.Always)]
-        public double Risk
+        public decimal Risk
         {
             get { return _risk; }
             set 
@@ -5615,7 +5615,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Win-Loss for settled bets.</summary>
         [Newtonsoft.Json.JsonProperty("winLoss", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? WinLoss
+        public decimal? WinLoss
         {
             get { return _winLoss; }
             set 
@@ -5646,7 +5646,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Client’s commission on the bet.</summary>
         [Newtonsoft.Json.JsonProperty("customerCommission", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? CustomerCommission
+        public decimal? CustomerCommission
         {
             get { return _customerCommission; }
             set 
@@ -5718,7 +5718,7 @@ namespace PinnacleApiWrapper
         }
     
         [Newtonsoft.Json.JsonProperty("minPicks", Required = Newtonsoft.Json.Required.Always)]
-        public double MinPicks
+        public decimal MinPicks
         {
             get { return _minPicks; }
             set 
@@ -5732,7 +5732,7 @@ namespace PinnacleApiWrapper
         }
     
         [Newtonsoft.Json.JsonProperty("maxPicks", Required = Newtonsoft.Json.Required.Always)]
-        public double MaxPicks
+        public decimal MaxPicks
         {
             get { return _maxPicks; }
             set 
@@ -5788,9 +5788,9 @@ namespace PinnacleApiWrapper
         private System.DateTime _placedAt;
         private ManualBetBetStatus _betStatus;
         private string _betType = "MANUAL";
-        private double _win;
-        private double _risk;
-        private double? _winLoss;
+        private decimal _win;
+        private decimal _risk;
+        private decimal? _winLoss;
         private long _updateSequence;
         private string _description;
         private long? _referenceBetId;
@@ -5882,7 +5882,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Win amount.</summary>
         [Newtonsoft.Json.JsonProperty("win", Required = Newtonsoft.Json.Required.Always)]
-        public double Win
+        public decimal Win
         {
             get { return _win; }
             set 
@@ -5897,7 +5897,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Risk amount.</summary>
         [Newtonsoft.Json.JsonProperty("risk", Required = Newtonsoft.Json.Required.Always)]
-        public double Risk
+        public decimal Risk
         {
             get { return _risk; }
             set 
@@ -5912,7 +5912,7 @@ namespace PinnacleApiWrapper
     
         /// <summary>Win-Loss for settled bets.</summary>
         [Newtonsoft.Json.JsonProperty("winLoss", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? WinLoss
+        public decimal? WinLoss
         {
             get { return _winLoss; }
             set 
@@ -6000,7 +6000,7 @@ namespace PinnacleApiWrapper
         private int? _leagueId;
         private long? _eventId;
         private string _eventStartTime;
-        private double? _handicap;
+        private decimal? _handicap;
         private string _teamName;
         private TeaserLegSide? _side;
         private string _team1;
@@ -6101,7 +6101,7 @@ namespace PinnacleApiWrapper
         }
     
         [Newtonsoft.Json.JsonProperty("handicap", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public double? Handicap
+        public decimal? Handicap
         {
             get { return _handicap; }
             set 
