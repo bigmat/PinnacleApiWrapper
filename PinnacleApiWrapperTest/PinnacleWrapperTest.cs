@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -366,6 +367,132 @@ namespace PinnacleApiWrapperTest
             Assert.AreEqual(null, result.StraightBet.PTeam1Score);
             Assert.AreEqual(null, result.StraightBet.PTeam2Score);
             Assert.AreEqual(StraightBetIsLive.False, result.StraightBet.IsLive);
+        }
+
+        [Test]
+        public async Task StraightV1Async_WithPlaceBetRequest_ReturnPlaceBetResponseV1()
+        {
+            // Arrange
+            var jsonForTest = "{\"status\":\"ACCEPTED\",\"errorCode\":null,\"betId\":761875754,\"uniqueRequestId\":\"0865697a-6e4e-49dc-b77a-190e71a57bc8\",\"betterLineWasAccepted\":false,\"price\":-147.0}";
+            var placeBetRequest = new PlaceBetRequest();
+            placeBetRequest.AcceptBetterLine = true;
+            placeBetRequest.BetType = PlaceBetRequestBetType.MONEYLINE;
+            placeBetRequest.EventId = 821011703;
+            placeBetRequest.LineId = 476830290;
+            placeBetRequest.SportId = 4;
+            placeBetRequest.Team = PlaceBetRequestTeam.TEAM1;
+            placeBetRequest.WinRiskStake = PlaceBetRequestWinRiskStake.RISK;
+            placeBetRequest.Stake = 5.00;
+            placeBetRequest.OddsFormat = OddsFormat.DECIMAL;
+
+            var client = GetPinnacleWrapperMock(jsonForTest);
+
+            // Act
+#pragma warning disable 612
+            var result = await client.StraightAsync(placeBetRequest);
+#pragma warning restore 612
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(PlaceBetResponseStatus.ACCEPTED, result.Status);
+            Assert.AreEqual(null, result.ErrorCode);
+            Assert.AreEqual("0865697a-6e4e-49dc-b77a-190e71a57bc8", result.UniqueRequestId.ToString());
+            Assert.AreEqual(761875754, result.BetId);
+            Assert.AreEqual(false, result.BetterLineWasAccepted);
+            Assert.AreEqual(-147.0, result.Price);
+        }
+
+        [Test]
+        public async Task ParlayAsync_WithPlaceBetRequest_ReturnPlaceParlayBetResponse()
+        {
+            // Arrange
+            var jsonForTest = "{\"status\":\"ACCEPTED\",\"errorCode\":null,\"betId\":759629245,\"uniqueRequestId\":\"D5CC50E4-284D-4D50-8D49-429BDC4F2A48\",\"roundRobinOptionWithOdds\":[{\"roundRobinOption\":\"Parlay\",\"odds\":682,\"unroundedDecimalOdds\":7.8231}],\"maxRiskStake\":0,\"minRiskStake\":0,\"validLegs\":[{\"status\":\"VALID\",\"errorCode\":null,\"legId\":\"10924E23-A2FE-4317-BFFD-80504675F554\",\"lineId\":419715968,\"altLineId\":null,\"price\":167,\"correlatedLegs\":[\"10924E23-A2FE-4317-BFFD-80504675F554\"]}],\"invalidLegs\":[{\"status\":\"VALID\",\"errorCode\":null,\"legId\":\"10924E23-A2FE-4317-BFFD-80504675F554\",\"lineId\":419715968,\"altLineId\":null,\"price\":167,\"correlatedLegs\":[\"10924E23-A2FE-4317-BFFD-80504675F554\"]}]}";
+            var placeBetRequest = new PlaceParlayBetRequest();
+            placeBetRequest.AcceptBetterLine = true;
+            placeBetRequest.RiskAmount = 10.5;
+            placeBetRequest.OddsFormat = OddsFormat.DECIMAL;
+            placeBetRequest.RoundRobinOptions = new ObservableCollection<Anonymous> {Anonymous.Parlay};
+            placeBetRequest.Legs = new ObservableCollection<ParlayLegRequest>
+            {
+                new ParlayLegRequest
+                {
+                    LineId = 419715968,
+                    AltLineId = null,
+                    Pitcher1MustStart = false,
+                    Pitcher2MustStart = false,
+                    SportId = 29,
+                    EventId = 758023991,
+                    PeriodNumber = 0,
+                    LegBetType = ParlayLegRequestLegBetType.MONEYLINE,
+                    Team = "TEAM1",
+                    Side = null
+                }
+            };
+
+            var client = GetPinnacleWrapperMock(jsonForTest);
+
+            // Act
+            var result = await client.ParlayAsync(placeBetRequest);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(PlaceParlayBetResponseStatus.ACCEPTED, result.Status);
+            Assert.AreEqual(null, result.ErrorCode);
+            Assert.AreEqual("d5cc50e4-284d-4d50-8d49-429bdc4f2a48", result.UniqueRequestId.ToString());
+            Assert.AreEqual(759629245, result.BetId);
+            Assert.AreEqual(0.0, result.MaxRiskStake);
+            Assert.AreEqual(0.0, result.MinRiskStake);
+            Assert.AreEqual(RoundRobinOptionWithOddsRoundRobinOption.Parlay, result.RoundRobinOptionWithOdds.Single().RoundRobinOption);
+            Assert.AreEqual(682, result.RoundRobinOptionWithOdds.Single().Odds);
+            Assert.AreEqual(7.8231, result.RoundRobinOptionWithOdds.Single().UnroundedDecimalOdds);
+            Assert.AreEqual(ParlayLegResponseStatus.VALID, result.ValidLegs.Single().Status);
+            Assert.AreEqual(null, result.ValidLegs.Single().ErrorCode);
+            Assert.AreEqual("10924E23-A2FE-4317-BFFD-80504675F554", result.ValidLegs.Single().LegId.ToString().ToUpper());
+            Assert.AreEqual(419715968, result.ValidLegs.Single().LineId);
+            Assert.AreEqual(null, result.ValidLegs.Single().AltLineId);
+            Assert.AreEqual(167, result.ValidLegs.Single().Price);
+            Assert.AreEqual("10924E23-A2FE-4317-BFFD-80504675F554", result.ValidLegs.Single().CorrelatedLegs.Single().ToString().ToUpper());
+            Assert.AreEqual(ParlayLegResponseStatus.VALID, result.InvalidLegs.Single().Status);
+            Assert.AreEqual(null, result.InvalidLegs.Single().ErrorCode);
+            Assert.AreEqual("10924E23-A2FE-4317-BFFD-80504675F554", result.InvalidLegs.Single().LegId.ToString().ToUpper());
+            Assert.AreEqual(419715968, result.InvalidLegs.Single().LineId);
+            Assert.AreEqual(null, result.InvalidLegs.Single().AltLineId);
+            Assert.AreEqual(167, result.InvalidLegs.Single().Price);
+            Assert.AreEqual("10924E23-A2FE-4317-BFFD-80504675F554", result.InvalidLegs.Single().CorrelatedLegs.Single().ToString().ToUpper());
+        }
+
+        [Test]
+        public async Task SpecialAsync_WithPlaceBetRequest_ReturnMultiBetResponseOfSpecialBetResponse()
+        {
+            // Arrange
+            var jsonForTest = "{\"bets\":[{\"status\":\"ACCEPTED\",\"errorCode\":null,\"betId\":760745142,\"uniqueRequestId\":\"10924E23-A2FE-4317-BFFD-80504675F554\",\"betterLineWasAccepted\":false}]}";
+            var placeBetRequest = new MultiBetRequestOfSpecialBetRequest();
+            placeBetRequest.Bets = new ObservableCollection<SpecialBetRequest>
+            {
+                new SpecialBetRequest
+                {
+                    AcceptBetterLine = true,
+                    OddsFormat = OddsFormat.DECIMAL,
+                    Stake = 10.5,
+                    WinRiskStake = SpecialBetRequestWinRiskStake.RISK,
+                    LineId = 51024304,
+                    SpecialId = 726394409,
+                    ContestantId = 726394411
+                }
+            };
+
+            var client = GetPinnacleWrapperMock(jsonForTest);
+
+            // Act
+            var result = await client.SpecialAsync(placeBetRequest);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(SpecialBetResponseStatus.ACCEPTED, result.Bets.Single().Status);
+            Assert.AreEqual(null, result.Bets.Single().ErrorCode);
+            Assert.AreEqual("10924E23-A2FE-4317-BFFD-80504675F554", result.Bets.Single().UniqueRequestId.ToString().ToUpper());
+            Assert.AreEqual(760745142, result.Bets.Single().BetId);
+            Assert.AreEqual(false, result.Bets.Single().BetterLineWasAccepted);
         }
     }
 }
