@@ -778,7 +778,15 @@ namespace PinnacleApiWrapper
             if (betlist != null) urlBuilder_.Append("betlist=").Append(System.Uri.EscapeDataString(ConvertToString(betlist, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             if (fromDate != null) urlBuilder_.Append("fromDate=").Append(System.Uri.EscapeDataString(ConvertToString(fromDate, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             if (toDate != null) urlBuilder_.Append("toDate=").Append(System.Uri.EscapeDataString(ConvertToString(toDate, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
-            if (betids != null) foreach (var item_ in betids) { urlBuilder_.Append("betids=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append("&"); }
+            if (betids != null)
+            {
+                urlBuilder_.Append("betids=");
+                foreach (var item_ in betids)
+                {
+                    urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append(",");
+                }
+            }
+
             if (uniqueRequestIds != null) foreach (var item_ in uniqueRequestIds) { urlBuilder_.Append("uniqueRequestIds=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append("&"); }
             urlBuilder_.Length--;
     
@@ -6598,6 +6606,9 @@ namespace PinnacleApiWrapper
     
         [System.Runtime.Serialization.EnumMember(Value = "WON")]
         WON = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = "REJECTED")]
+        REJECTED = 7,
     
     }
     
