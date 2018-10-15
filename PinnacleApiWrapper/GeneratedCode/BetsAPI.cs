@@ -614,7 +614,7 @@ namespace PinnacleApiWrapper
         public async System.Threading.Tasks.Task<MultiBetResponseOfSpecialBetResponse> SpecialAsync(MultiBetRequestOfSpecialBetRequest request, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/v1/bets/special");
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/v2/bets/special");
     
             var client_ = _httpClient;
             try
