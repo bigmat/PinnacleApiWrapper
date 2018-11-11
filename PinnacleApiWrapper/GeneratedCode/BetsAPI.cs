@@ -3337,6 +3337,7 @@ namespace PinnacleApiWrapper
         private decimal _risk;
         private decimal? _winLoss;
         private OddsFormat _oddsFormat;
+        private decimal? _odds;
         private decimal? _customerCommission;
         private CancellationReason _cancellationReason;
         private long _updateSequence;
@@ -3502,6 +3503,21 @@ namespace PinnacleApiWrapper
                 if (_oddsFormat != value)
                 {
                     _oddsFormat = value; 
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        [Newtonsoft.Json.JsonProperty("odds", Required = Newtonsoft.Json.Required.AllowNull)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public decimal? Odds
+        {
+            get { return _odds; }
+            set 
+            {
+                if (_odds != value)
+                {
+                    _odds = value; 
                     RaisePropertyChanged();
                 }
             }
