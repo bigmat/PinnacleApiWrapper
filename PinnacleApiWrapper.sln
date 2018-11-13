@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinnacleApiWrapper", "PinnacleApiWrapper\PinnacleApiWrapper.csproj", "{AADDB803-2E67-4D3B-A20B-FB73A021BF61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinnacleApiWrapperTest", "PinnacleApiWrapperTest\PinnacleApiWrapperTest.csproj", "{BDBD820A-B91E-4AAD-B116-0231725654BA}"
+Project("{52C93393-E8C9-409F-AA25-6BF40C2F029C}") = "PinnacleApiWrapperTest", "PinnacleApiWrapperTest\PinnacleApiWrapperTest.csproj", "{BDBD820A-B91E-4AAD-B116-0231725654BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
