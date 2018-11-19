@@ -7,3 +7,6 @@ Wrapper of Pinnacle API in .Net Core
 ## Quality
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=bigmat_PinnacleApiWrapper&metric=alert_status)](https://sonarcloud.io/dashboard?id=bigmat_PinnacleApiWrapper)
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=bigmat_PinnacleApiWrapper&metric=coverage)](https://sonarcloud.io/dashboard?id=bigmat_PinnacleApiWrapper)
+
+## Nuget
+[![NuGet Badge](https://buildstats.info/nuget/PinnacleApiWrapper)](https://www.nuget.org/packages/PinnacleApiWrapper/)
