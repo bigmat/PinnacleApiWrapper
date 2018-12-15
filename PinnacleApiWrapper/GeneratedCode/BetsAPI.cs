@@ -194,7 +194,7 @@ namespace PinnacleApiWrapper
         public async System.Threading.Tasks.Task<PlaceBetResponseV2> StraightV2Async(PlaceBetRequest request, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/v2/bets/straight");
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/v2/bets/place");
     
             var client_ = _httpClient;
             try
