@@ -32,7 +32,7 @@ namespace PinnacleApiWrapper
 
                 var jObject = JObject.Load(reader);
 
-                if (jObject.First.First is JArray jArray)
+                if (jObject.First?.First is JArray jArray)
                 {
                     foreach (var jToken in jArray)
                     {

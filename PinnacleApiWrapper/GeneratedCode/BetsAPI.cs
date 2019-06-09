@@ -774,7 +774,7 @@ namespace PinnacleApiWrapper
         public async System.Threading.Tasks.Task<GetBetsByTypeResponse> GetBetsByTypeAsync(Betlist? betlist, string fromDate, string toDate, System.Collections.Generic.IEnumerable<long> betids, System.Collections.Generic.IEnumerable<string> uniqueRequestIds, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/v2/bets?");
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/v3/bets?");
             if (betlist != null) urlBuilder_.Append("betlist=").Append(System.Uri.EscapeDataString(ConvertToString(betlist, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             if (fromDate != null) urlBuilder_.Append("fromDate=").Append(System.Uri.EscapeDataString(ConvertToString(fromDate, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             if (toDate != null) urlBuilder_.Append("toDate=").Append(System.Uri.EscapeDataString(ConvertToString(toDate, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
@@ -787,7 +787,7 @@ namespace PinnacleApiWrapper
                 }
             }
 
-            if (uniqueRequestIds != null) foreach (var item_ in uniqueRequestIds) { urlBuilder_.Append("uniqueRequestIds=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append("&"); }
+            if (uniqueRequestIds != null) foreach (var item_ in uniqueRequestIds) { urlBuilder_.Append("uniqueRequestIds=").Append(System.Uri.EscapeDataString(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture))).Append(","); }
             urlBuilder_.Length--;
     
             var client_ = _httpClient;
