@@ -1,12 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <ProjectGuid>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectGuid>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>bigmat</Authors>
+    <Company />
+    <Description>Wrapper of Pinnacle (PS3838) API in .Net Standard</Description>
+    <Copyright>2019</Copyright>
+    <PackageProjectUrl>https://github.com/bigmat/PinnacleApiWrapper</PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
+    <PackageTags>Pinnacle ps3838</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
   </ItemGroup>
 
 </Project>

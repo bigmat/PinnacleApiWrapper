@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinnacleApiWrapper", "PinnacleApiWrapper\PinnacleApiWrapper.csproj", "{AADDB803-2E67-4D3B-A20B-FB73A021BF61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PinnacleApiWrapper", "PinnacleApiWrapper\PinnacleApiWrapper.csproj", "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
 EndProject
-Project("{52C93393-E8C9-409F-AA25-6BF40C2F029C}") = "PinnacleApiWrapperTest", "PinnacleApiWrapperTest\PinnacleApiWrapperTest.csproj", "{BDBD820A-B91E-4AAD-B116-0231725654BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PinnacleApiWrapperTest", "PinnacleApiWrapperTest\PinnacleApiWrapperTest.csproj", "{BDBD820A-B91E-4AAD-B116-0231725654BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5743CBE5-8ED8-4559-8516-6AEC306B7BA4}"
+	ProjectSection(SolutionItems) = preProject
+		Ps3838BetsApiNswagConfig.nswag = Ps3838BetsApiNswagConfig.nswag
+		Ps3838CustomerApiNswagConfig.nswag = Ps3838CustomerApiNswagConfig.nswag
+		Ps3838LinesApiNswagConfig.nswag = Ps3838LinesApiNswagConfig.nswag
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +21,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AADDB803-2E67-4D3B-A20B-FB73A021BF61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AADDB803-2E67-4D3B-A20B-FB73A021BF61}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AADDB803-2E67-4D3B-A20B-FB73A021BF61}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AADDB803-2E67-4D3B-A20B-FB73A021BF61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BDBD820A-B91E-4AAD-B116-0231725654BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BDBD820A-B91E-4AAD-B116-0231725654BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDBD820A-B91E-4AAD-B116-0231725654BA}.Release|Any CPU.ActiveCfg = Release|Any CPU

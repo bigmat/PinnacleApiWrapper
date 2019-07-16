@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
+using Ps3838.Bets;
 
 namespace PinnacleApiWrapper
 {
