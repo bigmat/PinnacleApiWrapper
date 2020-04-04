@@ -1959,8 +1959,8 @@ namespace Ps3838.Bets
         public CancellationReason CancellationReason { get; set; }
     
         /// <summary>Update Sequence</summary>
-        [Newtonsoft.Json.JsonProperty("updateSequence", Required = Newtonsoft.Json.Required.Always)]
-        public long UpdateSequence { get; set; }
+        [Newtonsoft.Json.JsonProperty("updateSequence", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? UpdateSequence { get; set; }
     
         [Newtonsoft.Json.JsonProperty("sportId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? SportId { get; set; }
@@ -2609,8 +2609,8 @@ namespace Ps3838.Bets
         public CancellationReason CancellationReason { get; set; }
     
         /// <summary>Update Sequence</summary>
-        [Newtonsoft.Json.JsonProperty("updateSequence", Required = Newtonsoft.Json.Required.Always)]
-        public long UpdateSequence { get; set; }
+        [Newtonsoft.Json.JsonProperty("updateSequence", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? UpdateSequence { get; set; }
     
         [Newtonsoft.Json.JsonProperty("legs", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
@@ -3076,20 +3076,20 @@ namespace Ps3838.Bets
         public CancellationReason CancellationReason { get; set; }
     
         /// <summary>Update Sequence. It gets updated when the bet status change.</summary>
-        [Newtonsoft.Json.JsonProperty("updateSequence", Required = Newtonsoft.Json.Required.Always)]
-        public long UpdateSequence { get; set; }
+        [Newtonsoft.Json.JsonProperty("updateSequence", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? UpdateSequence { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("specialId", Required = Newtonsoft.Json.Required.Always)]
-        public long SpecialId { get; set; }
+        [Newtonsoft.Json.JsonProperty("specialId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? SpecialId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("specialName", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("specialName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string SpecialName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("contestantId", Required = Newtonsoft.Json.Required.Always)]
-        public long ContestantId { get; set; }
+        [Newtonsoft.Json.JsonProperty("contestantId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? ContestantId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("contestantName", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("contestantName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string ContestantName { get; set; }
     
@@ -3192,20 +3192,20 @@ namespace Ps3838.Bets
         public CancellationReason CancellationReason { get; set; }
     
         /// <summary>Update Sequence. It gets updated when the bet status change.</summary>
-        [Newtonsoft.Json.JsonProperty("updateSequence", Required = Newtonsoft.Json.Required.Always)]
-        public long UpdateSequence { get; set; }
+        [Newtonsoft.Json.JsonProperty("updateSequence", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? UpdateSequence { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("specialId", Required = Newtonsoft.Json.Required.Always)]
-        public long SpecialId { get; set; }
+        [Newtonsoft.Json.JsonProperty("specialId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? SpecialId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("specialName", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("specialName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string SpecialName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("contestantId", Required = Newtonsoft.Json.Required.Always)]
-        public long ContestantId { get; set; }
+        [Newtonsoft.Json.JsonProperty("contestantId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? ContestantId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("contestantName", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("contestantName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string ContestantName { get; set; }
     
@@ -3381,8 +3381,8 @@ namespace Ps3838.Bets
         public CancellationReason CancellationReason { get; set; }
     
         /// <summary>Update Sequence</summary>
-        [Newtonsoft.Json.JsonProperty("updateSequence", Required = Newtonsoft.Json.Required.Always)]
-        public long UpdateSequence { get; set; }
+        [Newtonsoft.Json.JsonProperty("updateSequence", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? UpdateSequence { get; set; }
     
         [Newtonsoft.Json.JsonProperty("teaserName", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
@@ -3462,8 +3462,8 @@ namespace Ps3838.Bets
         public double? WinLoss { get; set; }
     
         /// <summary>Update Sequence</summary>
-        [Newtonsoft.Json.JsonProperty("updateSequence", Required = Newtonsoft.Json.Required.Always)]
-        public long UpdateSequence { get; set; }
+        [Newtonsoft.Json.JsonProperty("updateSequence", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? UpdateSequence { get; set; }
     
         /// <summary>Manual bet description.</summary>
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Always)]
