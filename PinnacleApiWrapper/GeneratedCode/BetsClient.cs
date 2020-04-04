@@ -2046,7 +2046,7 @@ namespace Ps3838.Bets
     public partial class StraightBetV3 
     {
         /// <summary>Bet identification</summary>
-        [Newtonsoft.Json.JsonProperty("betId", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("betId", Required = Newtonsoft.Json.Required.Default)]
         public long BetId { get; set; }
     
         /// <summary>Wager identification. All bets placed thru the API will have value 1. Website Classic view supports multiple contest(special) bets placement in the same bet slip in that case the bet would have appropriate wager number, as well as all round robin parlay bets.</summary>
