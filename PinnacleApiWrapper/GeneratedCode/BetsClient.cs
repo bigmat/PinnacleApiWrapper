@@ -2219,7 +2219,7 @@ namespace Ps3838.Bets
         public string Code { get; set; }
     
         [Newtonsoft.Json.JsonProperty("details", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Tuple<CancellationDetailsItem> Details { get; set; }
+        public CancellationDetailsItem[] Details { get; set; }
     
     
     }
