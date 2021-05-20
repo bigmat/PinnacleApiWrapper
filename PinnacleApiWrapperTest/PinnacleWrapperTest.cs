@@ -344,68 +344,6 @@ namespace PinnacleApiWrapperTest
         }
 
         [Test]
-        public async Task StraightV2Async_WithPlaceBetRequest_ReturnPlaceBetResponseV2()
-        {
-            // Arrange
-            var jsonForTest = "{\"status\":\"ACCEPTED\",\"errorCode\":null,\"uniqueRequestId\":\"D5CC50E4-284D-4D50-8D49-429BDC4F2A4\",\"straightBet\":{\"betId\":759629245,\"wagerNumber\":1,\"placedAt\":\"2017-09-05T01:32:59Z\",\"betStatus\":\"ACCEPTED\",\"betType\":\"MONEYLINE\",\"win\":1,\"risk\":1.5,\"winLoss\":null,\"oddsFormat\":\"DECIMAL\",\"customerCommission\":null,\"cancellationReason\":{\"code\":\"FBS_CW_227\",\"details\":{\"correctTeam1Id\":\"Arizona Diamondbacks\",\"correctTeam2Id\":\"Blue Jays Hits\",\"correctListedPitcher1\":\"Smith\",\"correctListedPitcher2\":\"Tony\",\"correctSpread\":\"1.3\",\"correctTotalPoints\":\"34.7\",\"correctTeam1TotalPoints\":\"3.4\",\"correctTeam2TotalPoints\":\"2.6\",\"correctTeam1Score\":\"1\",\"correctTeam2Score\":\"3\",\"correctTeam1TennisSetsScore\":\"4\",\"correctTeam2TennisSetsScore\":\"2\"}},\"updateSequence\":111548915,\"sportId\":29,\"leagueId\":2462,\"eventId\":757064557,\"handicap\":null,\"price\":1.5,\"teamName\":\"Crvena Zvezda\",\"side\":null,\"pitcher1\":null,\"pitcher2\":null,\"pitcher1MustStart\":null,\"pitcher2MustStart\":null,\"team1\":\"Crvena Zvezda\",\"team2\":\"Partizan\",\"periodNumber\":0,\"team1Score\":null,\"team2Score\":null,\"ftTeam1Score\":null,\"ftTeam2Score\":null,\"pTeam1Score\":null,\"pTeam2Score\":null,\"isLive\":\"FALSE\"}}";
-            var placeBetRequest = new PlaceBetRequestV2();
-            placeBetRequest.AcceptBetterLine = true;
-            placeBetRequest.BetType = PlaceBetRequestV2BetType.MONEYLINE;
-            placeBetRequest.EventId = 821011703;
-            placeBetRequest.LineId = 476830290;
-            placeBetRequest.SportId = 4;
-            placeBetRequest.Team = PlaceBetRequestV2Team.TEAM1;
-            placeBetRequest.WinRiskStake = PlaceBetRequestV2WinRiskStake.RISK;
-            placeBetRequest.Stake = 5.00;
-            placeBetRequest.OddsFormat = OddsFormat.DECIMAL;
-
-            var client = GetBetsClientMock(jsonForTest);
-
-            // Act
-            var result = await client.V2BetsPlaceAsync(placeBetRequest);
-
-            // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual(PlaceBetResponseV2Status.ACCEPTED, result.Status);
-            Assert.AreEqual(null, result.ErrorCode);
-            Assert.AreEqual("D5CC50E4-284D-4D50-8D49-429BDC4F2A4", result.UniqueRequestId);
-            Assert.IsNotNull(result.StraightBet);
-            Assert.AreEqual(759629245, result.StraightBet.BetId);
-            Assert.AreEqual(1, result.StraightBet.WagerNumber);
-            Assert.AreEqual(new DateTimeOffset(2017, 09, 05, 01, 32, 59, TimeSpan.Zero), result.StraightBet.PlacedAt);
-            Assert.AreEqual(StraightBetBetStatus.ACCEPTED, result.StraightBet.BetStatus);
-            Assert.AreEqual(StraightBetBetType.MONEYLINE, result.StraightBet.BetType);
-            Assert.AreEqual(1, result.StraightBet.Win);
-            Assert.AreEqual(1.5, result.StraightBet.Risk);
-            Assert.AreEqual(null, result.StraightBet.WinLoss);
-            Assert.AreEqual(OddsFormat.DECIMAL, result.StraightBet.OddsFormat);
-            Assert.AreEqual(null, result.StraightBet.CustomerCommission);
-            Assert.AreEqual("FBS_CW_227", result.StraightBet.CancellationReason.Code);
-            Assert.AreEqual(111548915, result.StraightBet.UpdateSequence);
-            Assert.AreEqual(29, result.StraightBet.SportId);
-            Assert.AreEqual(2462, result.StraightBet.LeagueId);
-            Assert.AreEqual(757064557, result.StraightBet.EventId);
-            Assert.AreEqual(null, result.StraightBet.Handicap);
-            Assert.AreEqual(1.5, result.StraightBet.Price);
-            Assert.AreEqual("Crvena Zvezda", result.StraightBet.TeamName);
-            Assert.AreEqual(null, result.StraightBet.Side);
-            Assert.AreEqual(null, result.StraightBet.Pitcher1);
-            Assert.AreEqual(null, result.StraightBet.Pitcher2);
-            Assert.AreEqual(null, result.StraightBet.Pitcher1MustStart);
-            Assert.AreEqual(null, result.StraightBet.Pitcher2MustStart);
-            Assert.AreEqual("Crvena Zvezda", result.StraightBet.Team1);
-            Assert.AreEqual("Partizan", result.StraightBet.Team2);
-            Assert.AreEqual(0, result.StraightBet.PeriodNumber);
-            Assert.AreEqual(null, result.StraightBet.Team1Score);
-            Assert.AreEqual(null, result.StraightBet.Team2Score);
-            Assert.AreEqual(null, result.StraightBet.FtTeam1Score);
-            Assert.AreEqual(null, result.StraightBet.FtTeam2Score);
-            Assert.AreEqual(null, result.StraightBet.PTeam1Score);
-            Assert.AreEqual(null, result.StraightBet.PTeam2Score);
-            Assert.AreEqual(StraightBetIsLive.FALSE, result.StraightBet.IsLive);
-        }
-
-        [Test]
         public async Task StraightV1Async_WithPlaceBetRequest_ReturnPlaceBetResponseV1()
         {
             // Arrange
