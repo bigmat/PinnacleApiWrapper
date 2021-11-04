@@ -4496,7 +4496,7 @@ namespace Ps3838.Bets
         TOTAL_POINTS = 2,
         
         [System.Runtime.Serialization.EnumMember(Value = @"TEAM_TOTAL_POINTS")]
-        TEAM_TOTAL_POINTS = 2,
+        TEAM_TOTAL_POINTS = 3,
     
     }
     
